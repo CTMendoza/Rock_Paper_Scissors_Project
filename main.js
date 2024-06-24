@@ -49,9 +49,10 @@ function playRound(humanChoice, computerChoice) {
     console.log(`computer choice: ${computerChoice}`);
   if(lowerCase === computerChoice) {
     console.log(`It's a draw!`);
+    console.log(`Score: Human: ${humanScore}, Computer ${computerScore}`);
   }  else if ((lowerCase === 'paper' && computerChoice === 'rock') ||
-  (lowerCase === 'rock' && computerChoice === 'scissors') ||
-  (lowerCase === 'scissors' && computerChoice === 'paper')) {
+    (lowerCase === 'rock' && computerChoice === 'scissors') ||
+    (lowerCase === 'scissors' && computerChoice === 'paper')) {
     humanScore ++;
     console.log(`Human wins this round!`)
     console.log(`Score: Human: ${humanScore}, Computer ${computerScore}`);
@@ -62,10 +63,21 @@ function playRound(humanChoice, computerChoice) {
     console.log(`Computer wins this round!`)
     console.log(`Score: Human: ${humanScore}, Computer ${computerScore}`);
   } 
-
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+
+
+
+// Step 5: Write the logic to play the entire game
+// . create a new function named playGame
+
+function playGame () {
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+}
+
+playGame();
