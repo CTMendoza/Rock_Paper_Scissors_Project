@@ -9,11 +9,11 @@
 function getComputerChoice () {
     let random = Math.floor(Math.random() * 3);
     if (random === 0) {
-        return `${random} rock`
+        return `rock`
     } else if (random === 1) {
-        return `${random} paper`
+        return `paper`
     } else if(random === 2) {
-        return `${random} scissors`}
+        return `scissors`}
 }
 
 // Step 2: Write the logic to get the human choice
@@ -24,11 +24,42 @@ function getHumanChoice() {
    return prompt('Choose rock, paper, or scissors.');
 
 }
-console.log(getHumanChoice());
+
 // Step 3: Declare the players score variable
 // declare variable for the humanScore
 // declare variable for the computerScore
 // initialize both variables with a value of 0
-
 let humanScore = 0;
 let computerScore = 0;
+
+// Step 4: Write the logic to play a single round
+/* Your game will be played round by round.
+ You will write a function that takes
+ the human and computer player choices as arguments,
+ plays a single round, increments the round winner’s 
+ score and logs a winner announcement.
+*/
+// create function named playRound
+// define two parameters, humanChoice and computerChoice
+// humanChoice parameter should be case-insensitive
+// increment humanScore or computerScore variables based on around winner
+function playRound(humanChoice, computerChoice) {
+    lowerCase = humanChoice.toLowerCase();
+    console.log(`human choice: ${lowerCase}`);
+    console.log(`computer choice: ${computerChoice}`);
+  if(lowerCase === computerChoice) {
+    console.log(`It's a draw!`);
+  }  else if ((lowerCase === 'paper' && computerChoice === 'rock') ||
+  (lowerCase === 'rock' && computerChoice === 'scissors') ||
+  (lowerCase === 'scissors' && computerChoice === 'paper')) {
+    humanScore ++;
+    console.log(`Human wins this round!`)
+    console.log(`Score: Human: ${humanScore}, Computer ${computerScore}`);
+  }
+
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
