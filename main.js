@@ -20,10 +20,15 @@ function getComputerChoice () {
 // . create function called getHumanChoice
 // . get users choice by using the prompt method
 // . return  prompt method value
-
 function getHumanChoice() {
    return prompt('Choose rock, paper, or scissors.');
 
 }
-
 console.log(getHumanChoice());
+// Step 3: Declare the players score variable
+// declare variable for the humanScore
+// declare variable for the computerScore
+// initialize both variables with a value of 0
+
+let humanScore = 0;
+let computerScore = 0;
