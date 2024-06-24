@@ -15,3 +15,15 @@ function getComputerChoice () {
     } else if(random === 2) {
         return `${random} scissors`}
 }
+
+// Step 2: Write the logic to get the human choice
+// . create function called getHumanChoice
+// . get users choice by using the prompt method
+// . return  prompt method value
+
+function getHumanChoice() {
+   return prompt('Choose rock, paper, or scissors.');
+
+}
+
+console.log(getHumanChoice());
