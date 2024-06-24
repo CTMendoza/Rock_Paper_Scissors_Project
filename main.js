@@ -55,7 +55,13 @@ function playRound(humanChoice, computerChoice) {
     humanScore ++;
     console.log(`Human wins this round!`)
     console.log(`Score: Human: ${humanScore}, Computer ${computerScore}`);
-  }
+  } else if ((computerChoice === 'paper' && lowerCase === 'rock') ||
+    (computerChoice === 'rock' && lowerCase === 'scissors') ||
+    (computerChoice === 'scissors' && lowerCase === 'paper')) {
+    computerScore ++;
+    console.log(`Computer wins this round!`)
+    console.log(`Score: Human: ${humanScore}, Computer ${computerScore}`);
+  } 
 
 }
 
