@@ -72,12 +72,12 @@ function playRound(humanChoice, computerChoice) {
 // Step 5: Write the logic to play the entire game
 // . create a new function named playGame
 
-function playGame () {
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
-    playRound(getHumanChoice(), getComputerChoice());
-}
+// function playGame () {
+//     playRound(getHumanChoice(), getComputerChoice());
+//     playRound(getHumanChoice(), getComputerChoice());
+//     playRound(getHumanChoice(), getComputerChoice());
+//     playRound(getHumanChoice(), getComputerChoice());
+//     playRound(getHumanChoice(), getComputerChoice());
+// }
 
-playGame();
+// playGame();
