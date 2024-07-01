@@ -20,9 +20,8 @@ function getComputerChoice () {
 // . create function called getHumanChoice
 // . get users choice by using the prompt method
 // . return  prompt method value
-function getHumanChoice() {
-   return prompt('Choose rock, paper, or scissors.');
-
+function getHumanChoice(e) {
+   return e;
 }
 
 // Step 3: Declare the players score variable
@@ -44,28 +43,34 @@ let computerScore = 0;
 // humanChoice parameter should be case-insensitive
 // increment humanScore or computerScore variables based on around winner
 function playRound(humanChoice, computerChoice) {
-    lowerCase = humanChoice.toLowerCase();
-    console.log(`human choice: ${lowerCase}`);
+    console.log(`human choice: ${humanChoice}`);
     console.log(`computer choice: ${computerChoice}`);
-  if(lowerCase === computerChoice) {
+  if(humanChoice === computerChoice) {
     console.log(`It's a draw!`);
     console.log(`Score: Human: ${humanScore}, Computer ${computerScore}`);
-  }  else if ((lowerCase === 'paper' && computerChoice === 'rock') ||
-    (lowerCase === 'rock' && computerChoice === 'scissors') ||
-    (lowerCase === 'scissors' && computerChoice === 'paper')) {
+  }  else if ((humanChoice === 'paper' && computerChoice === 'rock') ||
+    (humanChoice === 'rock' && computerChoice === 'scissors') ||
+    (humanChoice === 'scissors' && computerChoice === 'paper')) {
     humanScore ++;
     console.log(`Human wins this round!`)
     console.log(`Score: Human: ${humanScore}, Computer ${computerScore}`);
-  } else if ((computerChoice === 'paper' && lowerCase === 'rock') ||
-    (computerChoice === 'rock' && lowerCase === 'scissors') ||
-    (computerChoice === 'scissors' && lowerCase === 'paper')) {
+  } else if ((computerChoice === 'paper' && humanChoice === 'rock') ||
+    (computerChoice === 'rock' && humanChoice === 'scissors') ||
+    (computerChoice === 'scissors' && humanChoice === 'paper')) {
     computerScore ++;
     console.log(`Computer wins this round!`)
     console.log(`Score: Human: ${humanScore}, Computer ${computerScore}`);
   } 
 }
 
+let rockBttn = document.querySelector('.rock');
+let paperBttn = document.querySelector('.paper');
+let scissorsBttn = document.querySelector('.scissors');
 
+//clicking on buttons will call the playRound function 
+rockBttn.addEventListener('click', (e)=> playRound(getHumanChoice(e.target.className), getComputerChoice()));
+paperBttn.addEventListener('click',  (e)=> playRound(getHumanChoice(e.target.className), getComputerChoice()));
+scissorsBttn.addEventListener('click',  (e)=> playRound(getHumanChoice(e.target.className), getComputerChoice()));
 
 
 
