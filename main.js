@@ -64,7 +64,17 @@ function playRound(humanChoice, computerChoice) {
     console.log(`Computer wins this round!`)
     console.log(`Score: Human: ${humanScore}, Computer ${computerScore}`);
   } 
+  displayResult();
 }
+
+// function to display result after player or computer scores 5 points
+function displayResult() {
+  if(humanScore >= 5) {
+    return result.textContent = 'Human is the winner!'
+  } else if(computerScore >=5) {
+    return result.textContent = 'Computer is the winner!'
+  }
+} 
 
 // select div #score and div #result
 let score = document.querySelector('#score');
