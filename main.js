@@ -46,22 +46,30 @@ function playRound(humanChoice, computerChoice) {
     console.log(`human choice: ${humanChoice}`);
     console.log(`computer choice: ${computerChoice}`);
   if(humanChoice === computerChoice) {
+    score.textContent = `It's a draw! Score: Human: ${humanScore} Computer: ${computerScore}`
     console.log(`It's a draw!`);
     console.log(`Score: Human: ${humanScore}, Computer ${computerScore}`);
   }  else if ((humanChoice === 'paper' && computerChoice === 'rock') ||
     (humanChoice === 'rock' && computerChoice === 'scissors') ||
     (humanChoice === 'scissors' && computerChoice === 'paper')) {
     humanScore ++;
+    score.textContent = `Human wins this round! Score: Human: ${humanScore} Computer: ${computerScore} `
     console.log(`Human wins this round!`)
     console.log(`Score: Human: ${humanScore}, Computer ${computerScore}`);
   } else if ((computerChoice === 'paper' && humanChoice === 'rock') ||
     (computerChoice === 'rock' && humanChoice === 'scissors') ||
     (computerChoice === 'scissors' && humanChoice === 'paper')) {
     computerScore ++;
+    score.textContent = `Computer wins this round! Score: Human: ${humanScore} Computer: ${computerScore} `
     console.log(`Computer wins this round!`)
     console.log(`Score: Human: ${humanScore}, Computer ${computerScore}`);
   } 
 }
+
+// select div #score and div #result
+let score = document.querySelector('#score');
+let result = document.querySelector('#result');
+
 
 let rockBttn = document.querySelector('.rock');
 let paperBttn = document.querySelector('.paper');
@@ -71,7 +79,6 @@ let scissorsBttn = document.querySelector('.scissors');
 rockBttn.addEventListener('click', (e)=> playRound(getHumanChoice(e.target.className), getComputerChoice()));
 paperBttn.addEventListener('click',  (e)=> playRound(getHumanChoice(e.target.className), getComputerChoice()));
 scissorsBttn.addEventListener('click',  (e)=> playRound(getHumanChoice(e.target.className), getComputerChoice()));
-
 
 
 // Step 5: Write the logic to play the entire game
